@@ -25,7 +25,7 @@ for (let i = 0; i < posts.length; i++) {
   </div>
   <div class="post__text">${content}</div>
   <div class="post__image">
-      <img src="https://unsplash.it/600/300?image=171" alt="">
+      <img src="${media}" alt="">
   </div>
   <div class="post__footer">
       <div class="likes js-likes">
@@ -36,7 +36,7 @@ for (let i = 0; i < posts.length; i++) {
               </a>
           </div>
           <div class="likes__counter">
-              Piace a <b id="like-counter-1" class="js-likes-counter">80</b> persone
+              Piace a <b id="like-counter-1" class="js-likes-counter">${likes}</b> persone
           </div>
       </div>
   </div>
