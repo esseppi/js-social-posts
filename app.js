@@ -1,5 +1,7 @@
 let container = document.querySelector('#container');
 let icon = document.querySelector('.post-meta__icon');
+let btnAddLike = document.querySelector('.like-button');
+let likeCounter = document.querySelector('#like-counter-1');
 
 function generatePost() {
   for (let i = 0; i < posts.length; i++) {
@@ -19,7 +21,7 @@ function generatePost() {
       initials = (
         (initials.shift()?.[1] || '') + (initials.pop()?.[1] || '')
       ).toUpperCase();
-      photo = `${initials}`;
+      photo = `<div>${initials}</div>`;
     }
     post.classList.add('team-card');
     post.innerHTML = `
@@ -42,7 +44,7 @@ function generatePost() {
         <div class="post__footer">
             <div class="likes js-likes">
                 <div class="likes__cta">
-                    <a class="like-button  js-like-button" href="#" data-postid="1">
+                    <a class="like-button  js-like-button" href="#" data-postid="${id}">
                         <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                         <span class="like-button__label">Mi Piace</span>
                     </a>
@@ -58,3 +60,9 @@ function generatePost() {
   }
 }
 generatePost();
+
+btnAddLike.addEventListener('submit', addLike());
+
+function addLike(event) {
+  // crea oggetto del nuovo membro prendendo i dati dal form
+}
