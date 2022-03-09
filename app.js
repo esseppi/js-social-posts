@@ -8,7 +8,6 @@ function generatePost(ele) {
   post.classList.add('post');
   post.dataset.postid = ele.id;
   post.innerHTML = `
-    <div class="post">
       <div class="post__header">
           <div class="post-meta">
               <div class="post-meta__icon">
@@ -43,7 +42,6 @@ function generatePost(ele) {
               </div>
           </div>
       </div>
-    </div>
   `;
   post.querySelector('.js-like-button').addEventListener('click', toggleLike);
   container.appendChild(post);
