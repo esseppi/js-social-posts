@@ -1,9 +1,11 @@
 let container = document.querySelector('#container');
 let arrLikedIds = [];
+
+// immissione posts in pagina
 for (let i in posts) {
   generatePost(posts[i]);
 }
-
+// generazione post
 function generatePost(ele) {
   let post = document.createElement('div');
   post.classList.add('post');
@@ -47,6 +49,7 @@ function generatePost(ele) {
   post.querySelector('.js-like-button').addEventListener('click', toggleLike);
   container.appendChild(post);
 }
+// filtro immagine profilo
 function getProfilePicHtml(ele) {
   if (ele.author.image == null) {
     let arrNameParts = ele.author.name.split(' ');
@@ -63,6 +66,7 @@ function dateFromIsoToItalian(originalDate) {
   return originalDate.split('-').reverse().join('/');
 }
 
+// toggle like
 function toggleLike(event) {
   event.preventDefault();
   const btnLike = this;
@@ -85,6 +89,7 @@ function toggleLike(event) {
   eleCounter.innerHTML = objPost.likes;
 }
 
+// Comportamento rimozione like
 function removeLike(btnLikeArgument, objPostArgument) {
   btnLikeArgument.classList.remove('like-button--liked');
   objPostArgument.likes--;
@@ -95,6 +100,7 @@ function removeLike(btnLikeArgument, objPostArgument) {
   console.table(posts);
 }
 
+// Comportamento aggiunta like
 function addLike(btnLikeArgument, objPostArgument) {
   btnLikeArgument.classList.add('like-button--liked');
 
