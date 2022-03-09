@@ -1,4 +1,5 @@
 let container = document.querySelector('#container');
+let arrLikedIds = [];
 for (let i in posts) {
   generatePost(posts[i]);
 }
@@ -73,7 +74,7 @@ function toggleLike(event) {
   while (postId != posts[indexLikedPost].id) {
     indexLikedPost++;
   }
-  const objPost = arrPosts[indexLikedPost];
+  const objPost = posts[indexLikedPost];
 
   if (btnLike.classList.contains('like-button--liked')) {
     removeLike(btnLike, objPost);
@@ -91,7 +92,7 @@ function removeLike(btnLikeArgument, objPostArgument) {
   arrLikedIds.splice(index, 1);
 
   console.log(arrLikedIds);
-  console.table(arrPosts);
+  console.table(posts);
 }
 
 function addLike(btnLikeArgument, objPostArgument) {
@@ -101,5 +102,5 @@ function addLike(btnLikeArgument, objPostArgument) {
   arrLikedIds.push(objPostArgument.id);
 
   console.log(arrLikedIds);
-  console.table(arrPosts);
+  console.table(posts);
 }
